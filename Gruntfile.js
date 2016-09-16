@@ -33,18 +33,6 @@ module.exports = function(grunt) {
     connect: {
       server: {}
     }
-    // babel: {
-    //   options: {
-    //     presets: ['es2015']
-    //   },
-    //   dist: {
-    //     files: {
-    //       
-    //     }
-    //   }
-    // }
-
-
   });
 
   require('jit-grunt')(grunt);

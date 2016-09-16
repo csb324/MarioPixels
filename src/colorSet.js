@@ -42,9 +42,6 @@ class ColorSet {
 	addBelatedPixel() {
 		var pixel = this.addPixel(this.frames[0].finalPosition.x, this.frames[0].finalPosition.y);
 
-		// console.log(this.name);
-		// console.log(this.frames.length);
-
 		for (var i = 1; i < this.frames.length - 1; i++) {
 			pixel.addPosition(this.frames[i].finalPosition.x, this.frames[i].finalPosition.y, i);
 		}

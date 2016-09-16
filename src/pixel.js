@@ -5,7 +5,6 @@ class Pixel {
 		this.label = parseInt(id);
 		this.color = color;
 		this.id = id;
-		this.current = 0;
 
 		this.positions = [{
 			x: x,
@@ -37,8 +36,7 @@ class Pixel {
 
 		$pixel.attr('data-index', this.id);
 
-		var firstPosition = this.positions[this.current];
-		this.current++;
+		var firstPosition = this.positions[0];
 
 		$pixel.css({
 			left: this.getPercentage(firstPosition['x']),
@@ -46,6 +44,7 @@ class Pixel {
 			'background-color': this.color
 		});
 
+		// used for keeping track of specific pixels and debugging them
 		// $pixel.text(this.label);
 		$canvas.append($pixel);
 	}
@@ -55,15 +54,6 @@ class Pixel {
 			x: x,
 			y: y
 		};
-	}
-
-	move() {
-		this.moveTo(this.current);
-		this.current++;
-
-		if (this.current == this.positions.length) {
-			this.current--;
-		}
 	}
 
 	moveTo(index) {
